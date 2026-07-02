@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- LEFT SIDE-->
+        <div class="left">
+            <img src="bg.jpg" alt="" class="bg-img">
+            <div class="logo">
+                <img src="odin-lined.png" alt="">
+            </div>
+        </div>
+        <!--RIGHT SIDE-->
+        <div class="right">
+            <div class="intro-text">
+                <p>This is not a real online service! You know you need something like this in your life to help you
+                    realize your deepest dreams. Sign up <em>now</em> to get started. <br><br> <em><strong>You
+                            know</strong></em>
+                    you want to.</p>
+            </div>
+            <form action="" class="signup-form">
+                <p class="form-heading">Let's do this!</p>
+                <!-- First Row: First Name + Last Name -->
+                <div class="form-row">
+                    <div>
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" required>
+                    </div>
+                    <div>
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" required>
+                    </div>
+                </div>
+
+                <!-- Second Row: Email + Phone -->
+                <div class="form-row">
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div>
+                        <label for="tel">Phone Number</label>
+                        <input type="tel" id="tel" required>
+                    </div>
+                </div>
+
+                <!-- Third Row: Password + Confirm Password -->
+                <div class="form-row">
+                    <div>
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required
+                            pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}"
+                            title="Must be at least 8 characters, include uppercase, lowercase, number, and special character">
+                    </div>
+                    <div>
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password" required
+                            oninput="this.setCustomValidity(this.value !== document.getElementById('password').value ? 'Passwords do not match' : '')">
+
+                    </div>
+                </div>
+                <button type="submit">Create Account</button>
+                <p class="login-text">Already have an account? <a href="#">Log in</a></p>
+            </form>
+
+        </div>
+    </div>
+</body>
+
+</html>
